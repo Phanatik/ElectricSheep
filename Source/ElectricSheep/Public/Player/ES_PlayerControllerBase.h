@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "HUD/ES_HUDBase.h"
+#include "Player/ES_PlayerCharacterBase.h"
 #include "ES_PlayerControllerBase.generated.h"
 
 class UInputComponent;

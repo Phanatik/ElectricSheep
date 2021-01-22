@@ -6,6 +6,7 @@
 #include "Camera/CameraComponent.h"
 #include "Player/ES_PlayerControllerBase.h"
 #include "Components/InputComponent.h"
+#include "Components/WidgetInteractionComponent.h"
 
 // Sets default values
 AES_PlayerCharacterBase::AES_PlayerCharacterBase()
@@ -19,6 +20,10 @@ AES_PlayerCharacterBase::AES_PlayerCharacterBase()
 	FirstPersonCameraComponent->SetRelativeLocation(FVector(0, 0, 64.f)); // Position the camera
 	FirstPersonCameraComponent->bUsePawnControlRotation = true;
 
+	WidgetIntComponent = CreateDefaultSubobject<UWidgetInteractionComponent>(TEXT("WidgetInt"));
+	WidgetIntComponent->SetupAttachment(FirstPersonCameraComponent);
+	WidgetIntComponent->SetRelativeLocation(FVector(0, 0, 0)); // Position the camera
+	//WidgetIntComponent->bUsePawnControlRotation = true;
 }
 
 // Called when the game starts or when spawned

@@ -4,10 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Components/WidgetInteractionComponent.h"
 #include "ES_PlayerCharacterBase.generated.h"
 
 class UCameraComponent;
 class USkeletalMeshComponent;
+class UWidgetInteractionComponent;
 
 UCLASS(config = Game)
 class ELECTRICSHEEP_API AES_PlayerCharacterBase : public ACharacter
@@ -22,6 +24,8 @@ class ELECTRICSHEEP_API AES_PlayerCharacterBase : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	UCameraComponent* FirstPersonCameraComponent;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UWidgetInteractionComponent* WidgetIntComponent;
 public:
 	// Sets default values for this character's properties
 	AES_PlayerCharacterBase();
@@ -29,7 +33,6 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -37,5 +40,7 @@ public:
 	FORCEINLINE class USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 	/** Returns FirstPersonCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+
+	FORCEINLINE class UWidgetInteractionComponent* GetWidgetIntComponent() const { return WidgetIntComponent; }
 
 };
