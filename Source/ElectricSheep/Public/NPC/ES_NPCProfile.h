@@ -3,11 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "Player/ES_PlayerCharacterBase.h"
+#include "BehaviorTree/BehaviorTree.h"
 #include "ES_NPCProfile.generated.h"
 
 UCLASS()
-class ELECTRICSHEEP_API AES_NPCProfile : public AActor
+class ELECTRICSHEEP_API AES_NPCProfile : public AES_PlayerCharacterBase
 {
 	GENERATED_BODY()
 	
@@ -15,7 +16,11 @@ public:
 	// Sets default values for this actor's properties
 	AES_NPCProfile();
 
-protected:
+protected:    
+    /** First person camera */
+    UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Interaction, meta = (AllowPrivateAccess = "true"))
+    UBehaviorTree* DialogueTree;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 

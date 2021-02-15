@@ -9,7 +9,7 @@ public class ElectricSheep : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "UMG", "Slate", "SlateCore" });
-		PrivateDependencyModuleNames.AddRange(new string[] { "GenericGraphRuntime" });
+		//PrivateDependencyModuleNames.AddRange(new string[] { "GenericGraphRuntime" });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });

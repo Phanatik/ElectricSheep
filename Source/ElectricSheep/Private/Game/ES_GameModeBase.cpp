@@ -5,8 +5,4 @@
 
 AES_GameModeBase::AES_GameModeBase()
 {
-	PlayerControllerClass = ContBase;
-	GameStateClass = StateBase;
-	DefaultPawnClass = CharBase;
-	HUDClass = HUDBase;
 }

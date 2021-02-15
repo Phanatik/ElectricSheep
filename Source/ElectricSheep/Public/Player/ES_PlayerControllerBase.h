@@ -19,30 +19,43 @@ class ELECTRICSHEEP_API AES_PlayerControllerBase : public APlayerController
 	GENERATED_BODY()
 
 	AES_PlayerControllerBase();
+
 public:
-	/** Handles moving forward/backward */
-	void MoveForward(float Val);
 
-	/** Handles strafing movement, left and right */
-	void MoveRight(float Val);
+    /** Handles moving forward/backward */
+    void MoveForward(float Val);
 
-	void Jump();
+    /** Handles strafing movement, left and right */
+    void MoveRight(float Val);
 
-	void StopJumping();
+    void Jump();
 
-	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-	float BaseTurnRate;
+    void StopJumping();
 
-	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-	float BaseLookUpRate;
+    void StartFiring();
 
-	void AddControllerYawInput(float Val);
+    void StopFiring();
 
-	void AddControllerPitchInput(float Val);
+    void InteractCheck();
+
+    /** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
+    float BaseTurnRate;
+
+    /** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
+    float BaseLookUpRate;
+
+    void AddControllerYawInput(float Val);
+
+    void AddControllerPitchInput(float Val);
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Interaction)
+    bool CanInteract;
 
 protected:
+    // Called when the game starts or when spawned
+    virtual void BeginPlay() override;
 	/**
 	 * Called via input to turn at a given rate.
 	 * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate

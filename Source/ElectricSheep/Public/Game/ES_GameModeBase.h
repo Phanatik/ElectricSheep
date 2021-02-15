@@ -21,18 +21,5 @@ class ELECTRICSHEEP_API AES_GameModeBase : public AGameModeBase
 private:
 	AES_GameModeBase();
 
-protected:
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "HUD")
-	TSubclassOf<AES_HUDBase> HUDBase;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Character")
-	TSubclassOf<AES_PlayerCharacterBase> CharBase;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Controller")
-	TSubclassOf<AES_PlayerControllerBase> ContBase;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "GameState")
-	TSubclassOf<AES_GameStateBase> StateBase;
 
 };
