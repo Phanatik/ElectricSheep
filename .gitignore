@@ -3,8 +3,16 @@
 *.pri
 *.kdev4
 
+# Miscellaneous Unreal Engine Generated Project Files
+*.code-workspace
+*.workspace
+*.pro
+*.txt
+Makefile
+
 # Visual Studio 2015 user specific files
 .vs/
+.vscode/
 
 # Compiled Object files
 *.slo
